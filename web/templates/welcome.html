@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block 'content' %}
+    <div class="container p-5" style="background: #FAF2E7; color:#8D240F;">
+
+        <div class="row"> <!--ENCABEZADO-->
+            <div class="col">
+                <div class="container p-3 rounded-3" style="height: auto;  background-color: #DEB685; color: #FAF2E7;">
+
+                    <h1 class="aviso fs-1">
+                        Bienvenid@ {{user.get_username}}
+                    </h1>
+                    <p><small>
+                        Disfruta tu visita. 
+                    </p></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center"> <!--TITULO DE LA PÁGINA-->
+            <img src="{% static 'welcome.png' %}" class="img-fluid mb-5 mt-5" style="height: 4rem;" alt="Pida Aquí">
+        </div>
+ 
+        <div class="row"> <!--FILA EN LA QUE VAN LAS TARJETAS-->
+            {% for flan in private_flans %}
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5">
+
+                <div class="card" style="width: 18rem; height: 100%;"> <!--CUERPO DE LAS TARJETAS-->
+                    <img src="{{flan.image_url}}" class="card-img-top" style="height: 10rem;" alt="{{ flan.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ flan.name}}</h5>
+                        <p class="card-text">{{ flan.description}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link">$ {{ flan.price}}</a>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}       
+        </div>
+
+    
+    </div>
+    {% endblock %}

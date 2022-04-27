@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block 'content' %}
+    <div class="container text-center" style="background: #FAF2E7;">
+
+        <div class="row"> <!--ENCABEZADO-->
+            <div class="col mt-5">
+                <div class="container p-3 rounded-3" style="height: auto;  background-color: #DEB685; color: #FAF2E7;">
+                    <h4 class="aviso">
+                        {{user.get_username}}, queremos compartir contigo
+                    </h4>
+                    <p><small>
+                        En <img src="{% static 'logo_onlyflans-white.png' %}" class="img-fluid" style="height: 1.5rem" alt="Onlyflans"> creemos que cocinar es una expresión de amor, por eso te ofrecemos algunas mágicas recetas de nuestra cocina
+                    </small></p>
+                </div>
+            </div>
+        </div> 
+
+        <img src="{% static 'recipes.png' %}" class="img-fluid m-5" style="height: 4rem" alt="Recetas Favoritas">
+        
+        <div class="container px-5 pb-5">
+            {% for recipe in recipe %} <!--AQUÍ DEBE IR LA LÍNEA QUE VINCULA LAS RECETAS-->
+            <div class="container receta row mx-1 my-1 mb-3 pt-1" id="superior" style="border: 2px solid #C6C9EC"> <!--#DEB685;-->
+                <h1 class="titulo pt-3 container-fluid" style="background-color: #C6C9EC; color: #FAF2E7;"> <!--TÍTULO-->
+                    {{recipe.name}}
+                </h1> 
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <!-- IMAGEN-->
+                    <img src="{{recipe.image_url}}" alt=" {{recipe.name}}" class="img-fluid">
+                    </div>
+
+                    <div class="info-receta col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <!--TIEMPOS E INGREDIENTES-->
+                    <div class="pt-4 pb-4">
+                        <h6><span style="font-weight: bold;">Tiempo de preparación:</span> {{recipe.time_prep}} minutos</h6>
+                        <h6><span style="font-weight: bold;">Tiempo de cocción:</span> {{recipe.time_cook}} minutos</h6>
+                        <br>
+                        <h5>Ingredientes</h5>
+                        <p>
+                        {{recipe.ingredients}}                        
+                        </p>
+                    </div>           
+                    </div>
+                <h5 class="info-receta"> <!--PREPARACIÓN-->
+                    Preparación 
+                </h5>
+                <p class="info-receta">
+                    {{recipe.preparation}}
+                </p>
+            </div> <!--CIERRE DE LA TARJETA RE LA RECETA-->
+             {% endfor %} <!--AQUI DEBE IR EL CIERRE-->
+        </div>
+        
+    </div>
+{% endblock %}

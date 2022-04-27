@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<div class="container p-5 text-center" style="background: #FAF2E7;">
+    <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+        <h2 class="cierre" >Se ha cerrado la sesión</h2>
+        <a href="{% url 'login' %}" class="retorno" > Haga click aquí para ingresar otra vez</a>
+    </div>
+</div>
+
+{% endblock %}

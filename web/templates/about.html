@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block 'content' %}
+    <div class="container text-center" style="background: #FAF2E7; color: #000000">
+        <img src="{% static 'about.png' %}" class="img-fluid m-5" style="height: 4rem" alt="Quienes Somos">
+        <div class="container px-5 pb-5"> 
+            <h4 class="px-5 lh-base acerca">Somos un emprendimiento creado en 2022 que busca entregar flanes de calidad para satisfacer paladares exigentes y que conocen de gastronomía. Y no solo eso, nuestra confección artesanal está orientada a tener un producto fresco, sin conservantes ni saborizantes artificiales.
+            </h4>
+            <h4 class="px-5 lh-base acerca" >Dejese consentir con nuestra gran variedad de postres hechos con ingredientes seleccionados de la más alta calidad y estándares internacionales creados para deleitar su paladar y el de la comunidad en general que busca un sabor equilibrado, sin que sea opacado por el exceso de dulzor de los productos industriales.
+            </h4>
+            <h4 class="px-5 lh-base acerca">Nos preocupamos de que cada uno de nuestros flanes sea una obra de arte que pueda ser disfrutada por sus sentidos: de exquisitos aromas y sabores, suaves texturas y una tentación a la vista. 
+            </h4> 
+            <h4 class="px-5 lh-base acerca">En <img src="{% static 'logo_onlyflans.png' %}" class="img-fluid" style="height: 2.2rem" alt="OnlyFlans"> nos interesa su salud y por eso ofrecemos nuestra <a href="{% url 'special' %}" style="color:#7478D1;">Selección Especial</a> para personas diabéticas, celiacas y veganas. Cada uno de estos postres es creado siguiendo estrictos protocolos de higiene para evitar la contaminación cruzada. Puedes comerlos con tranquilidad, después de todo los postres son para disfrutar.
+            </h4>
+        </div>    
+    </div>
+{% endblock %}

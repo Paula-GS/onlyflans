@@ -1,0 +1,84 @@
+/* Va dentro de una carpeta con el mismo nombre de la app, para que Django no se confunda al usar los estilos cuando hay proyectos con más de una app*/
+
+body {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    }
+.navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #FAF2E7;
+  }
+
+.aviso {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 3em;
+}
+
+.card {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.15em ;
+    color: #7478D1;
+    text-align: justify; 
+}
+
+.card-link {
+color: #8D240F;
+font-weight: bold;
+}
+
+.retorno {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 1.5em;
+    color: #7478D1;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.display-5 {
+    text-shadow: 2px 2px 3px #2b2827;
+    font-family: 'La Belle Aurore', cursive;
+}
+
+.sub {
+    font-family: 'La Belle Aurore', cursive;
+    text-shadow: 1px 1px 1px #2b2827;
+}
+
+h5 {
+font-size: 1.2em;
+font-weight: bold;
+text-align: left;
+}
+
+.botones {
+    margin-top: 1em;
+    vertical-align: middle;
+}
+
+.send{
+color: #FAF2E7;
+background-color: #7478D1;
+border: 1px solid #7478D1;
+}
+
+.user-header{
+    text-align: left;
+}
+
+.titulo {
+font-family: 'La Belle Aurore', cursive;
+font-size: 3em;
+}
+
+.info-receta {
+    text-align: left;
+}
+
+.acerca {
+    text-align: justify;
+    text-justify: inter-word;
+}

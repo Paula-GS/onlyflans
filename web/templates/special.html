@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+
+    <div class="container p-5" style="background: #FAF2E7; color:#000000;"> 
+
+        <div class="row"> <!--ENCABEZADO-->
+            <div class="col">
+                <div class="container p-3 rounded-3" style="height: auto;  background-color: #DEB685; color: #FAF2E7;">
+                    <img src="{% static 'special.png' %}" class="img-fluid mb-2 mt-2" style="height: 4rem;" alt="Sugar Free">
+                    <h4 class="aviso">
+                        Nos preocupamos por tí
+                    </h4>
+                    <p><small>
+                        Porque en <img src="{% static 'logo_onlyflans-white.png' %}" class="img-fluid" style="height: 1.5rem" alt="Onlyflans"> sabemos que debes cuidar lo que comes, tenemos estas alternativas para que puedas disfrutar sin preocuparte.
+                    </small></p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center"> <!--TITULO DE LA SECCIÓN-->
+            <img src="{% static 'sugar_free.png' %}" class="img-fluid mb-2 mt-5" style="height: 3rem;" alt="Sugar Free">
+        </div>
+        <div class="row"> <!--FILA EN LA QUE VAN LAS TARJETAS-->
+            {% for flan in sugar_free %}
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5">
+
+                <div class="card" style="width: 18rem; height: 100%;"> <!--CUERPO DE LAS TARJETAS-->
+                    <img src="{{flan.image_url}}" class="card-img-top" style="height: 10rem;" alt="{{ flan.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ flan.name}}</h5>
+                        <p class="card-text">{{ flan.description}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link align-bottom">$ {{ flan.price}}</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="container text-center"> <!--TITULO DE LA SECCIÓN-->
+            <img src="{% static 'gluten_free.png' %}" class="img-fluid mb-2 mt-2" style="height: 3rem;" alt="Gluten Free">
+        </div>
+        <p>
+            Preparados en un ambiente completamente aislado y almacenados en un compartimiento especial para que no se produzca contaminación cruzada.
+        </p>
+        <div class="row"> <!--FILA EN LA QUE VAN LAS TARJETAS-->
+            {% for flan in gluten_free %}
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5">
+
+                <div class="card" style="width: 18rem; height: 100%;"> <!--CUERPO DE LAS TARJETAS-->
+                    <img src="{{flan.image_url}}" class="card-img-top" style="height: 10rem;" alt="{{ flan.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ flan.name}}</h5>
+                        <p class="card-text">{{ flan.description}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link align-bottom">$ {{ flan.price}}</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+                
+        <div class="container text-center"> <!--TITULO DE LA SECCIÓN-->
+            <img src="{% static 'vegan.png' %}" class="img-fluid mb-2 mt-2" style="height: 3rem;" alt="Vegan">
+        </div>
+        <div class="row"> <!--FILA EN LA QUE VAN LAS TARJETAS-->
+            {% for flan in vegan %}
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5">
+
+                <div class="card" style="width: 18rem; height: 100%;"> <!--CUERPO DE LAS TARJETAS-->
+                    <img src="{{flan.image_url}}" class="card-img-top" style="height: 10rem;" alt="{{ flan.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ flan.name}}</h5>
+                        <p class="card-text">{{ flan.description}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link align-bottom">$ {{ flan.price}}</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+
+    </div>
+    {% endblock %}

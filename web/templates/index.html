@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+
+    <div class="container p-5" style="background: #FAF2E7; color:#8D240F;"> 
+
+         <div class="row"> <!--ENCABEZADO-->
+            <div class="col">
+                <div class="container p-3 rounded-3" style="height: auto;  background-color: #DEB685; color: #FAF2E7;">
+                    <h4 class="aviso">
+                        Ofrecemos una gran variedad de postres
+                    </h4>
+                    <p><small>
+                        <img src="{% static 'logo_onlyflans-white.png' %}" class="img-fluid" style="height: 1.5rem" alt="Onlyflans"> nace en el año 2022 buscando entregar flanes de calidad. ¿Quieres conocer nuestros especiales?
+                    </small></p>
+                    <a href="{% url 'contacto' %}" class="btn btn-outline-light btn-sm">
+                        Escríbenos
+                    </a>
+                </div>
+            </div>
+        </div> 
+
+        <div class="container text-center pt-4"> <!--TITULO DE LA PÁGINA-->
+            <img src="{% static 'index.png' %}" class="img-fluid mb-5" style="height: 4rem;" alt="Nuestros Productos">
+        </div>
+
+        <div class="row"> <!--FILA EN LA QUE VAN LAS TARJETAS-->
+            {% for flan in public_flans %}
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5">
+
+                <div class="card" style="width: 18rem; height: 100%;"> <!--CUERPO DE LAS TARJETAS-->
+                    <img src="{{flan.image_url}}" class="card-img-top" style="height: 10rem;" alt="{{ flan.name}}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ flan.name}}</h5>
+                        <p class="card-text">{{ flan.description}}</p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link align-bottom">$ {{ flan.price}}</a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+    </div>
+    {% endblock %}

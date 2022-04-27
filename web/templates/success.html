@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<div class="container p-5 text-center" style="background: #FAF2E7;">
+    <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+        <h3 class="text-center">
+            Gracias por contactarte con <img src="{% static 'logo_onlyflans.png' %}" class="img-fluid" style="height: 2.5rem" alt="Onlyflans">, te responderemos en breve.
+        </h3>
+        <div>
+            <a href="{%url 'index' %}" class="btn btn-outline send">
+                Volver al inicio
+            </a>
+        </div>
+
+    </div>
+    
+</div>
+{% endblock %}
